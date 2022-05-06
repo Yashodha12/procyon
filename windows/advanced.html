@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Preferences</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+        <div id="main-content">
+            <div id ="menu-bar">
+               <ul>
+                <li><a href="settings.html" >General</a></li>
+                <li><a href="dns_log.html">DNS Logs</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li  style="border-left: rgba(74, 78, 217,1) solid 7px;"><a href="advanced.html" style="border-bottom: rgba(74, 78, 217,1) solid 2px;">Advanced</a></li>
+               </ul>
+            </div>
+            <div id="content">
+                <div class="advanced-info">
+                    <p class="heading">Controller address</p>
+                    <input class ="advanced_input" type="text" id="controller_input" placeholder="https://procyon.ai"> 
+                </div>
+                <div style="display: flex;justify-content: right;">
+                    
+                    <button id="update_btn">Update</button>
+                </div>
+                <div style="height: 30px;"></div>
+                <div>
+                    <span id="error_msg" style="color: red;"></span>
+                </div>
+            </div>
+        </div>
+        <script>
+           
+        var update_btn = document.getElementById("update_btn");
+        var controller_input = document.getElementById("controller_input");
+        var error_msg = document.getElementById("error_msg");
+        var getUrl = localStorage.getItem('controllerUrl');
+        controller_input.value=getUrl;
+        update_btn.addEventListener('click', (event) => {
+            if(controller_input.value==""){
+                error_msg.style="color:red"
+                error_msg.innerHTML='Please input valid controller url'
+            } 
+            else {
+                localStorage.setItem('controllerUrl',controller_input.value);
+                
+                error_msg.style="color:green"
+                error_msg.innerHTML = "Controller "+controller_input.value+ " is updated. . Connecting now...";
+
+            }
+        });
+              
+        </script>
+   </body>
+</html>

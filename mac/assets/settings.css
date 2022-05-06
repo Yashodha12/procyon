@@ -1,0 +1,120 @@
+#menu-bar,
+#content {
+  padding: 0px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.heading {
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 600;
+}
+
+#content {
+  width: 93%;
+  height: 100%;
+}
+
+.info {
+  width: 100%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #f1eae8;
+  margin-left: 25px;
+  padding-left: 50px;
+  height: 320px;
+  border-radius: 15px;
+}
+
+.settings_chbx {
+  padding: 25px;
+}
+
+.settings_chbx span {
+  vertical-align: middle;
+}
+
+#connectivity_info,
+#device_info {
+  width: 50%;
+}
+
+table {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+td {
+  width: 50%;
+  padding: 5px;
+}
+
+.table_left {
+  text-align: right;
+  font-weight: 600;
+}
+.table_right {
+  text-align: left;
+  font-weight: 400;
+}
+
+.bottom-info {
+  position: relative;
+  margin-top: -50px;
+  margin-left: 25px;
+  position: relative;
+  width: 100%;
+  color: #8f8a85;
+  font-weight: 300;
+  font-family: "SF Pro Display", sans-serif;
+}
+.custom_text {
+  margin-left: 30px;
+  color: #8f8a85;
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 300;
+}
+
+#dns_ele {
+  width: 180px;
+  height: 30px;
+  padding: 5px;
+  margin: 10px 2px;
+  border: none;
+}
+
+#check {
+  font-size: 2em;
+}
+
+.feedback-info {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.feedback_ele {
+  box-sizing: border-box;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.fdbk_btn {
+  align-self: flex-start;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: black;
+  background: #fff;
+  border: 1px solid #cacaca;
+  border-radius: 0.5rem;
+  color: #333230;
+  display: inline-block;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 1px 1px 2px -1px rgb(0 0 0 / 71%);
+  cursor: pointer;
+  font-family: "SF Pro Display";
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<title></title>
+</head>
+
+<body>
+	<div class="roundedDoubleBtn">
+		<button onclick="window.location.href='settings.html'">General</button>
+		<button onclick="window.location.href='dns_log.html'">DNS Logs</button>
+		<button onclick="window.location.href='feedback.html'" class="active">FeedBack</button>
+		<button onclick="window.location.href='advanced.html'">Advanced</button>
+	</div>
+	<div class="outer-box">
+		<div style="width: 100% !important;">
+			<div class="fdb_text">
+				<p>Our Help center is regularly updated with answers to common questions. <a
+						href="javascript:void(0)">Visit
+						Help Center</a></p>
+			</div>
+			<div class="input-fdbk">
+				<label for="#your-input">Email address:</label>
+				<input type="text" id="your-input" />
+			</div>
+			<div class="input-fdbk mt-10">
+				<label for="#your-input">Subject:</label>
+				<input type="text" id="your-input" placeholder="Briefly describe the issue." />
+			</div>
+			<div class="input-fdbk mt-10 description">
+				<label for="#your-input">Description:</label>
+				<textarea name="" id="" cols="10" rows="10"
+					placeholder="Describe the issue/improvement in as much detail as you can. &#10;Include steps to replace replicate if relevant"></textarea>
+			</div>
+			<div class="input-fdbk mt-10 ">
+				<label for="#your-input"></label>
+				<div style="margin-right: 15px;">
+					<input type="checkbox" checked>
+					<span style="vertical-align: middle;">Share debug information</span>
+				</div>
+
+				<button class="fdbk_btn">View Logs</button>
+				<button class="fdbk_btn">Submit Feedback</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

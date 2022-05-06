@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Preferences</title>
+      <link rel="stylesheet" href="style.css">
+      <script>
+        function myfunction() {
+           document.getElementById("dns_ele").disabled = true;
+     
+        }
+         function disable() {
+             element = document.getElementById("check");
+             if(element.checked == true){
+                 document.getElementById("dns_ele").disabled = false;
+                 document.getElementById("check").style.color=blue;
+             } else {
+              document.getElementById("dns_ele").disabled = true;
+             }
+
+         }
+        
+     </script>
+   </head>
+   <body onload="myfunction()">
+        <div id="main-content">
+            <div id ="menu-bar">
+               <ul>
+                <li><a href="settings.html" >General</a></li>
+                <li  style="border-left: rgba(74, 78, 217,1) solid 7px;"><a href="dns_log.html" style="border-bottom: rgba(74, 78, 217,1) solid 2px;">DNS Logs</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="advanced.html">Advanced</a></li>
+               </ul>
+            </div>
+            <div id="content">
+                <div id = "dns_log">
+                    <input type="checkbox" id="check" onclick="disable()" >
+                    <span class="custom_bold">Log DNS Queries</span>
+                    <br>
+                    <button id ="dns_ele" >View DNS Logs</button>
+                </div>
+               
+            </div>
+        </div>
+   </body>
+</html>

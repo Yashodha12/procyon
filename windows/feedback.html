@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Preferences</title>
+      <link rel="stylesheet" href="style.css">
+      <script>
+          function clickfun(){
+              document.getElementById("check").style.color=blue;
+          }
+      </script>
+   </head>
+   <body>
+        <div id="main-content">
+            <div id ="menu-bar">
+               <ul>
+                <li><a href="settings.html" >General</a></li>
+                <li><a href="dns_log.html">DNS Logs</a></li>
+                <li  style="border-left: rgba(74, 78, 217,1) solid 7px;"><a href="feedback.html" style="border-bottom: rgba(74, 78, 217,1) solid 2px;">Feedback</a></li>
+                <li><a href="advanced.html">Advanced</a></li>
+               </ul>
+            </div>
+            <div id="content">
+               <div class="feedback-info">
+                <div class="feedback_ele">
+                    <p><span>Our Help Cente is regularly  updated with answers to common questions. </span> <a href="#">Visit Help Center</a></a> </p>
+                </div>
+                <div class="feedback_ele">
+                    <p class="fdb_heading">Email Address</p>
+                    <input class ="feedback_input" type="text">
+                </div>
+                <div class="feedback_ele">
+                    <p class="fdb_heading">Subject</p>
+                    <input class ="feedback_input" type="text" placeholder="Briefly describe the issue.">
+                </div>
+                <div class="feedback_ele">
+                    <p class="fdb_heading">Description</p>
+                    <textarea class ="feedback_input"   rows="4" id ="textarea" placeholder="Describe the issue/improvement in as much detail as you can. Include steps to replicate if relevant."></textarea>
+                </div>
+                <div class="feedback_ele">
+                    <input type="checkbox" onclick="clickfun()">
+                    <span>Share debug information</span>
+                    <br>
+                    <button id = "view-btn">View Logs</button>
+                    <button id = "submit-btn">Submit Feedback</button>
+                </div>
+               </div>
+            </div>
+        </div>
+   </body>
+</html>

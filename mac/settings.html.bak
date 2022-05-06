@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/settings.css">
+	<title></title>
+</head>
+
+<body>
+	<div class="roundedDoubleBtn">
+		<button onclick="window.location.href='settings.html'" class="active">General</button>
+		<button onclick="window.location.href='dns_log.html'">DNS Logs</button>
+		<button onclick="window.location.href='feedback.html'">FeedBack</button>
+		<button onclick="window.location.href='advanced.html'">Advanced</button>
+	</div>
+	<div class="outer-box">
+		<div id="content">
+			<div class="info">
+				<div id="connectivity_info">
+					<p class="heading"><b>Connectivity Information</b>
+					<p>
+					<table class="heading">
+						<tr>
+							<td class="table_left"><b>Connection :</b></td>
+							<td class="table_right">Off</td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Colocation center :</b></td>
+							<td class="table_right">SJC</td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<div id="device_info">
+					<p class="heading"><b>Your Device</b></p>
+					<table class="heading">
+						<tr>
+							<td class="table_left "><b>Connection Type :</b></td>
+							<td class="table_right">Wi-Fi</td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Public ID :</b></td>
+							<td class="table_right">24.5.222.205</td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Device ID :</b></td>
+							<td class="table_right">12909a983402c901</td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>User ID :</b></td>
+							<td class="table_right">Han Solo</td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Onboarded by :</b></td>
+							<td class="table_right">Luke Skywalker</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="settings_chbx">
+				<label for="#your-input"></label>
+				<div>
+					<input type="checkbox" checked>
+					<span>Launch at login</span>
+				</div>
+				<p class="custom_text">Automatically start Procyon when you login to your Mac</p>
+			</div>
+			<div class="bottom-info">
+				<table>
+					<tr>
+						<td>Version 1.6.27.0(20211910.4)</td>
+						<td style="text-align: right;">
+							<button id="dns_ele" class="fdbk_btn">Check for Updates</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

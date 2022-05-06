@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Preferences</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div id="main-content">
+      <div id="menu-bar">
+         <ul>
+            <li style="border-left: rgba(74, 78, 217,1) solid 7px;"><a href="settings.html"
+                  style="border-bottom: rgba(74, 78, 217,1) solid 2px;">General</a></li>
+            <li><a href="dns_log.html">DNS Logs</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
+         </ul>
+      </div>
+      <div id="content">
+         <div class="info">
+            <div id="connectivity_info">
+               <p class="heading">Connectivity Information
+               <p>
+               <table>
+						<tr>
+							<td class="table_left"><b>Connection :</b></td>
+							<td class="table_right"><span id="connection">Off</span></td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Tenant name :</b></td>
+							<td class="table_right"><span id="tenant_id">SJC</span></td>
+						</tr>
+               </table>
+            </div>
+            <br>
+            <hr>
+            <div id="device_info">
+               <p class="heading">Your Device</p>
+               <table>
+						<tr>
+							<td class="table_left "><b>Connection Type :</b></td>
+							<td class="table_right"><span id="connection_type">Wi-Fi</span></td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Device ID :</b></td>
+							<td class="table_right"><span id="device_id">12909a983402c901</span></td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>User ID :</b></td>
+							<td class="table_right"><span id="user_id">Han Solo</span></td>
+						</tr>
+						<tr>
+							<td class="table_left"><b>Onboarded by :</b></td>
+							<td class="table_right"><span id="onboardedby">Luke Skywalker</span></td>
+						</tr>
+               </table>
+            </div>
+         </div>
+         <div class="bottom-info">
+            <table>
+               <tr>
+                  <td>Version 1.6.28.0</td>
+                  <td style="text-align: right;">
+                     <button id="dns_ele" style="width:180px;border-radius: 3px;">Check for Updates</button>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+	<script>
+		var connection = document.getElementById("connection");
+		var colocation = document.getElementById("colocation");
+		var connection_type = document.getElementById("connection_type");
+		var device_id = document.getElementById("device_id");
+		var user_id = document.getElementById("user_id");
+		var onboardedby = document.getElementById("onboardedby");
+		var tenant_id = document.getElementById("tenant_id");
+
+		updateData();		
+		setInterval(()=>{
+			updateData();
+		},4000);
+
+		function updateData(){
+			var deviceStatus = localStorage.getItem("deviceStatus");
+			var deviceInfo = localStorage.getItem("deviceInfo");
+			
+			device_id.innerHTML = "";
+			user_id.innerHTML = "";
+			onboardedby.innerHTML = "";
+			tenant_id.innerHTML = "";
+
+			if(deviceStatus=="connected"){
+				connection.style="color:Green;"
+				connection.innerHTML = "On";
+			} else {
+				connection.style="color:red;"
+				connection.innerHTML = "Off";
+			}
+			try{
+				var deviceData = JSON.parse(deviceInfo);
+				
+				if(deviceStatus=="connected" || deviceStatus=="registered"){
+					device_id.innerHTML = deviceData.Attributes.DeviceIdentifier;
+					user_id.innerHTML = deviceData.UserName;
+					onboardedby.innerHTML = deviceData.ApproverName;
+					tenant_id.innerHTML = deviceData.ObjectMeta.Tenant;
+				}
+			}
+			catch(e)
+			{console.log(e);}
+		}
+	</script>
+</body>
+
+</html>

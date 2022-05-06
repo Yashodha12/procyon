@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="roundedDoubleBtn">
+        <button onclick="window.location.href='settings.html'">General</button>
+        <button onclick="window.location.href='dns_log.html'">DNS Logs</button>
+        <button onclick="window.location.href='feedback.html'">FeedBack</button>
+        <button onclick="window.location.href='advanced.html'" class="active">Advanced</button>
+    </div>
+    <div class="outer-box">
+        <div class="input-w">
+            <label for="#controller">Controller Address:</label> 
+            <input type="text" placeholder="https://procyon.ai" id="controller_input"/>
+        </div>
+        <div style="margin-left:585px;">
+            <button id="update_btn">Update</button>
+        </div>
+        <div style="height: 30px;"></div>
+        <div>
+            <span id="error_msg" style="color: red;"></span>
+        </div>      
+    </div>
+    <script>
+        var update_btn = document.getElementById("update_btn");
+        var controller_input = document.getElementById("controller_input");
+        var error_msg = document.getElementById("error_msg");
+        var getUrl = localStorage.getItem('controllerUrl');
+        controller_input.value=getUrl;
+        update_btn.addEventListener('click', (event) => {
+            if(controller_input.value==""){
+                error_msg.style="color:red"
+                error_msg.innerHTML='Please input valid controller url'
+            } else {
+                localStorage.setItem('controllerUrl',controller_input.value);
+                
+                error_msg.style="color:green"
+                error_msg.innerHTML = "Controller "+controller_input.value+ " is updated. Connecting now...";
+            }
+        });
+        </script>
+
+</body>
+
+</html>

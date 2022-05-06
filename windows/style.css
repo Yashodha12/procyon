@@ -1,0 +1,225 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable-static-display');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+    overflow: hidden; /* Hide scrollbars */
+  }
+
+#main-content{
+    width:100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    font-size: 13px;
+}
+#menu-bar, #content {
+    padding:0px;
+    padding-top:20px;
+    box-sizing: border-box;
+}
+.heading {
+    font-size: 1.5em;
+    padding:0px;
+    margin:0px;
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+#menu-bar {
+    width:25%;
+    height:100%;
+    background-color: rgba(196, 196, 194,0.3);
+}
+
+#content {
+    width :74%;
+    height:100%;
+   
+}
+
+ul {
+    list-style: none;
+    padding:0px;
+    margin:0px;
+}
+
+ul li {
+    padding: 5px;
+    margin:15px 0px;
+}
+
+ul li:hover {
+    border-left: rgba(74, 78, 217,1) solid 7px;
+}
+ul li a {
+    text-decoration: none;
+    padding:0px;
+    margin:5px;
+    color:black;
+}
+ul li a:hover {
+    border-bottom: rgba(74, 78, 217,1) solid 2px;
+}
+
+.info {
+    width:100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    padding-top: 20px;
+   
+}
+
+#connectivity_info, #device_info {
+    width:55%;
+ }
+
+table {
+    width:100%;
+    padding:0px;
+    margin:0px;
+}
+td {
+    width:50%;
+    padding:5px;
+}
+
+.table_left{
+    text-align: right;
+}
+.table_right{
+    text-align: left;
+}
+
+.bottom-info {
+    position: relative;
+    top:20%;
+}
+.advanced-info {
+    width:100%;
+    padding:5px 20px;
+    box-sizing: border-box;
+}
+.advanced_input{
+    width:100%;
+    /* margin:10px 5px; */
+    padding:8px;
+    border-radius: 0px;
+    border: #8A8782 solid 1px;
+}
+.feedback_input{
+    width:100%;
+    padding:8px;
+    border-radius: 0px;
+    border: #8A8782 solid 1px;
+}
+#dns_log {
+    width:100%;
+    padding:20px;
+    box-sizing: border-box;
+}
+#dns_ele {
+    width:180px;
+    height: 30px;
+    padding :5px;
+    margin:10px 2px;
+   /* border-radius: 3px;
+     border: rgba(23, 23, 26,0.5) solid 1px; */
+    border: none;
+}
+
+#check {
+    font-size: 2em;
+}
+
+.feedback-info{
+   width:100%;
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+.feedback_ele {
+    box-sizing: border-box;
+    padding:5px;
+    margin-top: 10px;
+}
+#view-btn, #submit-btn, #update_btn, #unregister{
+    width:180px;
+    height: 30px;
+    padding :5px;
+    margin:10px 2px;
+   /* border-radius: 3px;
+     border: rgba(23, 23, 26,0.5) solid 1px; */
+    border: none;
+    cursor: pointer;
+}
+
+INPUT[type=checkbox]:focus
+{
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+INPUT[type=checkbox]
+{
+    background-color: #fff;
+    border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    outline: 2px solid #ccc;
+}
+
+INPUT[type=checkbox]:checked
+{
+    background-color: #409fd6;
+    background: #409fd6 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+textarea, input{
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+}
+::-webkit-input-placeholder {
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+}
+:-moz-placeholder {
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+}
+::-moz-placeholder {
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+}
+:-ms-input-placeholder {
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+}
+
+.custom_bold{
+    font-weight: 600;font-family: 'Segoe UI Variable Static Text', sans-serif;
+    font-size: 14px;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #E4E2DF;
+  font-size: 14px;
+  font-family: 'Segoe UI Variable Static Text', sans-serif;
+  color: #817E79;
+}
+
+.fdb_heading{
+    font-size: 1.2em;
+    padding:0px;
+    margin:0px;
+    font-family: 'Segoe UI Variable Static Text', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}

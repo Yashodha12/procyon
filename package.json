@@ -1,0 +1,154 @@
+{
+  "name": "procyon-agent",
+  "version": "1.0.0",
+  "description": "Procyon-Agent",
+  "main": "main.js",
+  "author": "Procyon.ai",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^16.2.2",
+    "electron-builder": "^22.13.1"
+  },
+  "dependencies": {
+    "check-internet-connected": "^2.0.5",
+    "electron-log": "^4.4.4",
+    "electron-notarize": "^1.1.1",
+    "electron-osx-sign": "^0.6.0",
+    "electron-traywindow-positioner": "^1.1.0",
+    "sudo-prompt": "^9.2.1"
+  },
+  "build": {
+    "appId": "procyon.ai",
+    "productName": "Procyon.ai",
+    "asar": true,
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "requestedExecutionLevel": "requireAdministrator",
+      "publisherName": "Procyon.ai",
+      "certificateFile": "procyon.pfx",
+      "certificatePassword": "password",
+      "certificateSubjectName": "Procyon.ai"
+    },
+    "protocols": [
+      {
+        "name": "procyon",
+        "schemes": [
+          "procyon"
+        ]
+      }
+    ],
+    "directories": {
+      "output": "build"
+    },
+    "icon": "logo.ico",
+    "extraFiles": [
+      "cyonagent.exe",
+      "tap-windows.exe",
+      {
+        "from": "./cyonagent_mac",
+        "to": "./Resources/",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "./procyonReload.sh",
+        "to": "./Resources/",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "./template.plist",
+        "to": "./Resources/",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "application.procyon.agent.plist",
+        "to": "./Resources/",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "settings.txt",
+        "to": "./Resources/",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "include": "build/installer.nsh",
+      "installerIcon": "logo.ico"
+    },
+    "snap": {
+      "synopsis": "Procyon Agent Desktop App"
+    },
+    "dmg": {
+      "title": "Procyon-ai",
+      "internetEnabled": true,
+      "background": null,
+      "backgroundColor": "#ffffff",
+      "window": {
+        "width": "400",
+        "height": "300"
+      },
+      "contents": [
+        {
+          "x": 100,
+          "y": 100,
+          "type": "file"
+        },
+        {
+          "x": 300,
+          "y": 100,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "icon": "logo.icns"
+    },
+    "afterSign": "./notarize.js",
+    "pkg": {
+      "scripts": "pkg-scripts",
+      "installLocation": "/Applications",
+      "background": {
+        "alignment": "bottomleft"
+      },
+      "allowAnywhere": true,
+      "allowCurrentUserHome": true,
+      "allowRootDirectory": true,
+      "isVersionChecked": true,
+      "isRelocatable": false,
+      "overwriteAction": "upgrade"
+    },
+    "mac": {
+      "target": "pkg",
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "extraDistFiles": [
+        "cyonagent_mac"
+      ],
+      "electronLanguages": [
+        "en"
+      ],
+      "icon": "logo.icns",
+      "entitlements": "mac/package/entitlements.mac.plist",
+      "entitlementsInherit": "mac/package/entitlements.mac.inherit.plist",
+      "provisioningProfile": "mac/package/embedded.provisionprofile",
+      "hardenedRuntime": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+/* make sure that the body fills the entire window */
+
+
+/* make sure that the webview element fills the entire body*/
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+ }
+ 
+ webview {
+    display: flex;   /* iframes are inline by default */
+    border: none;     /* Reset default border */
+    height: 90vh !important;     /* Viewport-relative units */
+    width: 95vw !important;
+    margin: 15px;
+  }

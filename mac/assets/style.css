@@ -1,0 +1,176 @@
+@import url("http://fonts.cdnfonts.com/css/sf-pro-display?styles=98774,98777,98776,98772,98773,98775,98770,98771,98769");
+
+* {
+  box-sizing: border-box;
+  font-family: "SF Pro Display", sans-serif;
+}
+body {
+  background-color: #f1eae8;
+  overflow: hidden; /* Hide scrollbars */
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.outer-box {
+  width: 95%;
+  height: 470px;
+  background-color: #e1dfda;
+  border-radius: 13px;
+  margin: 0 auto;
+}
+
+.roundedDoubleBtn {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  width: fit-content;
+  border: 2px solid #e7dbda;
+  margin: 0 auto;
+  margin-top: 30px;
+  position: relative;
+  top: 10px;
+  z-index: 999;
+}
+button {
+  border: 0;
+  height: 25px;
+  width: 90px;
+  outline: none;
+  cursor: pointer !important;
+  font-size: 15px;
+}
+
+.active {
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  border-radius: 10px;
+  border: 1px solid #0088fc;
+  border-bottom: 2px solid #0088fc;
+  box-shadow: 0px 0px 0px 0px #0088fc;
+}
+
+.input-w {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-w label {
+  margin-right: 10px;
+}
+
+input {
+  height: 35px;
+  width: 70%;
+  outline: none !important;
+  border: none;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/*Feedback*/
+
+.fdb_text {
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.input-fdbk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-fdbk label {
+  margin-right: 10px;
+  width: 20%;
+  text-align: right;
+  font-size: 15px;
+}
+
+.mt-10 {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 70%;
+  outline: none !important;
+  border: none;
+  font-size: 14px;
+  vertical-align: middle;
+  height: 200px;
+}
+
+.description label {
+  margin-bottom: 180px;
+  display: block;
+}
+
+::-webkit-input-placeholder {
+  font-size: 15px;
+  color: #b7b3ad;
+  padding: 5px;
+  font-weight: 300;
+}
+:-moz-placeholder {
+  font-weight: 300;
+}
+
+
+INPUT[type="checkbox"]:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+INPUT[type="checkbox"] {
+  background-color: #fff;
+  border-radius: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  position: relative;
+  outline: 2px solid #ccc;
+}
+
+INPUT[type="checkbox"]:checked {
+  background-color: #409fd6;
+  background: #409fd6
+    url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==")
+    3px 3px no-repeat;
+}
+
+.input-fdbk .fdbk_btn {
+  align-self: flex-start;
+  width: 140px;
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: black;
+  background: #fff;
+  border: 1px solid #cacaca;
+  border-radius: 0.5rem;
+  color: #333230;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 1px 1px 2px -1px rgb(0 0 0 / 71%);
+  cursor: pointer;
+}
+
+/*DNS*/
+.dns {
+  padding: 20px;
+}
+
+.dns span {
+  vertical-align: middle;
+}
