@@ -32,9 +32,6 @@
       "target": "nsis",
       "requestedExecutionLevel": "requireAdministrator",
       "publisherName": "Procyon.ai",
-      "certificateFile": "procyon.pfx",
-      "certificatePassword": "password",
-      "certificateSubjectName": "Procyon.ai"
     },
     "protocols": [
       {
