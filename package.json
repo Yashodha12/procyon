@@ -31,7 +31,7 @@
     "win": {
       "target": "nsis",
       "requestedExecutionLevel": "requireAdministrator",
-      "publisherName": "Procyon.ai",
+      "publisherName": "Procyon.ai"
     },
     "protocols": [
       {
