@@ -1,0 +1,95 @@
+directories:
+  output: build
+  buildResources: build
+appId: procyon.ai
+productName: Procyon.ai
+asar: true
+files:
+  - filter:
+      - '**/*'
+win:
+  target: nsis
+  requestedExecutionLevel: requireAdministrator
+  publisherName: Procyon.ai
+  certificateFile: procyon.pfx
+  certificatePassword: <stripped sensitive data>
+  certificateSubjectName: Procyon.ai
+protocols:
+  - name: procyon
+    schemes:
+      - procyon
+icon: logo.ico
+extraFiles:
+  - filter:
+      - cyonagent.exe
+      - tap-windows.exe
+  - from: ./cyonagent_mac
+    to: ./Resources/
+    filter:
+      - '**/*'
+  - from: ./procyonReload.sh
+    to: ./Resources/
+    filter:
+      - '**/*'
+  - from: ./template.plist
+    to: ./Resources/
+    filter:
+      - '**/*'
+  - from: application.procyon.agent.plist
+    to: ./Resources/
+    filter:
+      - '**/*'
+  - from: settings.txt
+    to: ./Resources/
+    filter:
+      - '**/*'
+nsis:
+  oneClick: true
+  perMachine: true
+  include: build/installer.nsh
+  installerIcon: logo.ico
+snap:
+  synopsis: Procyon Agent Desktop App
+dmg:
+  title: Procyon-ai
+  internetEnabled: true
+  background: null
+  backgroundColor: '#ffffff'
+  window:
+    width: 400
+    height: 300
+  contents:
+    - x: 100
+      'y': 100
+      type: file
+    - x: 300
+      'y': 100
+      type: link
+      path: /Applications
+  icon: logo.icns
+afterSign: ./notarize.js
+pkg:
+  scripts: pkg-scripts
+  installLocation: /Applications
+  background:
+    alignment: bottomleft
+  allowAnywhere: true
+  allowCurrentUserHome: true
+  allowRootDirectory: true
+  isVersionChecked: true
+  isRelocatable: false
+  overwriteAction: upgrade
+mac:
+  target: pkg
+  category: public.app-category.productivity
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  extraDistFiles:
+    - cyonagent_mac
+  electronLanguages:
+    - en
+  icon: logo.icns
+  entitlements: mac/package/entitlements.mac.plist
+  entitlementsInherit: mac/package/entitlements.mac.inherit.plist
+  provisioningProfile: mac/package/embedded.provisionprofile
+  hardenedRuntime: true
+electronVersion: 16.2.3
